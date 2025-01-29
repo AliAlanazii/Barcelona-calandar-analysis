@@ -2,7 +2,9 @@
 Barcelona Calendar Analysis provides insights into event trends, schedules, and patterns in Barcelona over time.
 ## 🌐 For the following analysis we download the real air bnb data from:
 https://data.insideairbnb.com/spain/catalonia/barcelona/2024-09-06/data/calendar.csv.gz
+
 <img src="https://github.com/user-attachments/assets/18485c34-5b87-4ddd-a1e4-3a936d43c2ca" alt="Value Counts Output" width="600"/>
+
 * After landing on the website you can click on calendar.csv.gz and it will be downloaded!
 * If you are using Google Collab then .gz will give you no issues
 
@@ -40,4 +42,53 @@ bus_day.head()
 <img width="678" alt="Screenshot 1446-07-22 at 11 54 50 AM" src="https://github.com/user-attachments/assets/ea97d437-11f1-43d3-a13d-6944dce01a3c" />
 
 #  📈 Plot a bar graph to show availability percentage
+```python
+import matplotlib.pyplot as plt
+avi_per.plot(kind='bar', color=['blue', 'pink'])
+plt.title('Availability Percentages')
+plt.ylabel('Percentage')
+plt.xlabel('Available (t/f)')
+plt.show()
+````
+
+<img src="https://github.com/user-attachments/assets/e480c43f-b952-4ad6-b801-cd0eea17eb65" alt="Value Counts Output" width="600"/>
+
+# 📈 Plot the busiest day
+
+```python
+bus_day.head(10).plot(kind='bar', color='lightblue')
+plt.title('Top 10 Busiest Dates')
+plt.ylabel('Number of Listings Unavailable')
+plt.xlabel('Date')
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/79a89434-b93f-4d71-a977-a187f0717295" alt="Value Counts Output" width="600"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
