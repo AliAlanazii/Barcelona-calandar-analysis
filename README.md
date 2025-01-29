@@ -3,7 +3,7 @@ Barcelona Calendar Analysis provides insights into event trends, schedules, and 
 
 # 🌐 For the following analysis we download the real air bnb data from:
 * https://insideairbnb.com/get-the-data/
-
+* All calculations have been performed based on real data from Barcelona.
 * <img src="https://github.com/user-attachments/assets/18485c34-5b87-4ddd-a1e4-3a936d43c2ca" alt="Value Counts Output" width="600"/>
 
 ## 🌐 Download calendar dataset of Barcelona from:
@@ -180,6 +180,48 @@ a
 * Type your city name on Google Maps
 * Right click
 <img src="https://github.com/user-attachments/assets/c5fe1d69-030e-49c4-8410-75c6cd67ac5b" alt="Value Counts Output" width="600"/>
+
+## 🔍️ Question 1: What is the proportion of listings with more than 100 reviews?
+```python
+# Count listings with more than 100 reviews
+highly_reviewed_listings_count = listings[listings["number_of_reviews"] > 100].shape[0]
+
+# Plot the result
+plt.figure(figsize=(6, 6))
+labels = ["Listings with >100 Reviews", "Other Listings"]
+sizes = [highly_reviewed_listings_count, listings.shape[0] - highly_reviewed_listings_count]
+colors = ["lightcoral", "lightgray"]
+plt.pie(sizes, labels=labels, autopct="%1.1f%%", colors=colors, startangle=140, wedgeprops={"edgecolor": "black"})
+
+plt.title("Proportion of Listings with More than 100 Reviews", fontsize=14)
+
+# Show the plot
+plt.show()
+```
+<img src="https://github.com/user-attachments/assets/48d0648e-cb2d-406f-ae91-7b97cf96974f" alt="Value Counts Output" width="600"/>
+
+## 🔍️ Question 2: Find the top 10 neighbourhoods with the most listings available all year (365 days)
+```python
+# Find the top 10 neighbourhoods with the most listings available all year (365 days)
+top_neighbourhoods_availability = listings[listings["availability_365"] == 365]["neighbourhood"].value_counts().head(10)
+
+# Plot the result
+plt.figure(figsize=(8, 5))
+top_neighbourhoods_availability.plot(kind="bar", color="lightpink", edgecolor="black")
+
+plt.title("Top 5 Neighbourhoods with Listings Available All Year", fontsize=14)
+plt.xlabel("Neighbourhood", fontsize=12)
+plt.ylabel("Number of Listings", fontsize=12)
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+
+# Show the plot
+plt.show()
+```
+<img src="https://github.com/user-attachments/assets/dac3bc85-6d48-4237-900c-c52ba798e6cc" alt="Value Counts Output" width="600"/>
+
+
+
 
 
 
