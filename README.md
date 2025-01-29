@@ -151,6 +151,38 @@ If you see clusters of heatmap intensity, these hotspots likely correspond to bu
 * Spread-Out Listings:
 A more even spread of listings across Barcelona could indicate that demand is balanced, with travelers booking stays across different neighborhoods rather than just the central areas.
 
+```python
+import folium
+from folium.plugins import HeatMap
+import pandas as pd
+
+
+Barcelona_data = listings[['latitude', 'longitude', 'price']]  # Example, you may add more columns
+
+# Create a base map centered around Hawaii
+a = folium.Map(location=[41.403763895076544, 2.2017716019349334], zoom_start=10)
+
+# Prepare the data for the heatmap
+heat_data = [[row['latitude'], row['longitude']] for index, row in Barcelona_data.iterrows()]
+
+# Add the heatmap to the map
+HeatMap(heat_data).add_to(a)
+
+# Save the map as an HTML file to view in a browser
+a.save('Barcelona_heatmap.html')
+
+# If you're using Jupyter Notebook, you can display the map directly in the notebook:
+a
+```
+<img src="https://github.com/user-attachments/assets/2f3b767f-4342-4541-a74f-150faaf19c35" alt="Value Counts Output" width="600"/>
+
+## 📌 🚨 How do I find location for my city?
+* Type your city name on Google Maps
+* Right click
+<img src="https://github.com/user-attachments/assets/c5fe1d69-030e-49c4-8410-75c6cd67ac5b" alt="Value Counts Output" width="600"/>
+
+
+
 
 
 
