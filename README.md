@@ -1,9 +1,14 @@
-# Barcelona calandar analysis
+# 🧑‍💻 Barcelona calandar analysis
 Barcelona Calendar Analysis provides insights into event trends, schedules, and patterns in Barcelona over time.
-## 🌐 For the following analysis we download the real air bnb data from:
+
+# 🌐 For the following analysis we download the real air bnb data from:
+* https://insideairbnb.com/get-the-data/
+
+* <img src="https://github.com/user-attachments/assets/18485c34-5b87-4ddd-a1e4-3a936d43c2ca" alt="Value Counts Output" width="600"/>
+
+## 🌐 Download calendar dataset of Barcelona from:
 https://data.insideairbnb.com/spain/catalonia/barcelona/2024-09-06/data/calendar.csv.gz
 
-<img src="https://github.com/user-attachments/assets/18485c34-5b87-4ddd-a1e4-3a936d43c2ca" alt="Value Counts Output" width="600"/>
 
 * After landing on the website you can click on calendar.csv.gz and it will be downloaded!
 * If you are using Google Collab then .gz will give you no issues
@@ -31,6 +36,8 @@ avi_per = df['available'].value_counts(normalize = True)*100
 avi_per
 ```
 <img width="678" alt="Screenshot 1446-07-22 at 11 53 02 AM" src="https://github.com/user-attachments/assets/358a6c93-957b-4259-9fa7-88d23e2e623a" />
+
+* f (false) means not available, t(true) means available.
 
 ## Counts for the busiest day!
 
@@ -96,7 +103,7 @@ plt.show()
 ```
 <img src="https://github.com/user-attachments/assets/df8392ae-632b-47be-bc3e-e0892145e484" alt="Value Counts Output" width="600"/>
 
-# 📈 Top 10 neighborhoods with the most listings
+## 📈 Top 10 neighborhoods with the most listings
 ```python
 neighborhood_counts = listings['neighbourhood'].value_counts().head(10)
 print("Top 10 Neighborhoods by Listings:")
@@ -112,6 +119,25 @@ plt.show()
 ```
 <img src="https://github.com/user-attachments/assets/97a35547-08fb-4253-8a6e-36fd04094e01" alt="Value Counts Output" width="600"/>
 <img src="https://github.com/user-attachments/assets/f239e275-67f0-4dbe-bed1-0eaffc5107b0" alt="Value Counts Output" width="600"/>
+
+## 📈 Geographical Distribution of Listings (💸 Price Colored)
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=listings, x='longitude', y='latitude', hue='price', palette='viridis', size='price', sizes=(10, 200))
+plt.title('Geographical Distribution of Listings (Price Colored)')
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+plt.show()
+```
+<img src="https://github.com/user-attachments/assets/146496b2-6f02-483c-ac31-88c6bfebb053" alt="Value Counts Output" width="600"/>
+
+## 📌 Let us see the listings on a real map
+
+
+
 
 
 
