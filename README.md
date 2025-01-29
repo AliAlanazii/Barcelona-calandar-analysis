@@ -135,6 +135,21 @@ plt.show()
 <img src="https://github.com/user-attachments/assets/146496b2-6f02-483c-ac31-88c6bfebb053" alt="Value Counts Output" width="600"/>
 
 ## 📌 Let us see the listings on a real map
+#### Hotter Areas (Red/Yellow) in Barcelona:
+* High Density:
+Areas highlighted in red or yellow (the "hot" colors) indicate a higher concentration of listings. This means there are many available rental properties in these parts of the city.
+* Popular Locations:
+These regions are likely in high demand, often near major attractions such as La Rambla, Sagrada Família, the Gothic Quarter, or Barceloneta Beach. These are the areas where tourists and visitors tend to stay the most.
+#### Colder Areas (Green/Blue) in Barcelona:
+* Low Density:
+The blue or green (the "cold" colors) indicate a lower concentration of listings, meaning fewer rental properties are available in these zones.
+* Less Popular Locations:
+These areas might be farther from the main tourist hotspots, often located in quieter residential neighborhoods like Horta-Guinardó or Sant Andreu. Lower density could also suggest more affordable stays due to less competition.
+#### Density Patterns in Barcelona:
+* Clustered Areas:
+If you see clusters of heatmap intensity, these hotspots likely correspond to busy locations such as Passeig de Gràcia, Plaça de Catalunya, or areas near Camp Nou, where visitor activity is high.
+* Spread-Out Listings:
+A more even spread of listings across Barcelona could indicate that demand is balanced, with travelers booking stays across different neighborhoods rather than just the central areas.
 
 
 
