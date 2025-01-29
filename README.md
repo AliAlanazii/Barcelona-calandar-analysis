@@ -13,7 +13,7 @@ import pandas as pd
 df = pd.read.csv('calender.csv')
 
 ```
-<img width="1013" alt="Screenshot 1446-07-22 at 11 51 57 AM" src="https://github.com/user-attachments/assets/9aff17e9-166f-44f2-b00e-f06b16271884" />
+<img width="1013" alt="Screenshot 1446-07-22 at 11 51 57 AM" src="https://github.com/user-attachments/assets/18eb0de9-23c2-40d9-ba41-bd1a54ddb6ec" />
 
 # ✏️ Questions that you might want to address about the given data
 
@@ -21,16 +21,16 @@ df = pd.read.csv('calender.csv')
 ```python
 df.available.value_counts()
 ```
-<img width="1013" alt="Screenshot 1446-07-22 at 11 49 11 AM" src="https://github.com/user-attachments/assets/ed7ef2d1-d8dc-4f36-8b6c-f8629d878ee5" />
+<img width="1013" alt="Screenshot 1446-07-22 at 11 49 11 AM" src="https://github.com/user-attachments/assets/2fe58ae8-88e5-4467-add9-b45c54bbd2e3" />
 
 * f (false) means not available, t(true) means available.
 
 ## We calculate the percentage of avaliable and unavaliable room
 ```⁠python
-avi_per = data['available'].value_counts(normalize = True)*100
+avi_per = df['available'].value_counts(normalize = True)*100
 avi_per
 ```
-<img width="678" alt="Screenshot 1446-07-22 at 11 53 02 AM" src="https://github.com/user-attachments/assets/b874fa7d-7ffe-44dc-ab99-466865b0a095" />
+<img width="678" alt="Screenshot 1446-07-22 at 11 53 02 AM" src="https://github.com/user-attachments/assets/358a6c93-957b-4259-9fa7-88d23e2e623a" />
 
 ## Counts for the busiest day!
 
@@ -39,7 +39,7 @@ bus_day = df[df['available']== 'f']['date'].value_counts()
 bus_day.head()
 ```
 
-<img width="678" alt="Screenshot 1446-07-22 at 11 54 50 AM" src="https://github.com/user-attachments/assets/ea97d437-11f1-43d3-a13d-6944dce01a3c" />
+<img width="678" alt="Screenshot 1446-07-22 at 11 54 50 AM" src="https://github.com/user-attachments/assets/cd8c6d83-ad30-4e92-b79a-a435956faeec" />
 
 ##  📈 Plot a bar graph to show availability percentage
 ```python
@@ -77,6 +77,8 @@ listings = pd.read_csv('listings.csv')
 ```python
 listings.columns
 ```
+<img src="https://github.com/user-attachments/assets/be7a29d3-4d39-4e76-bf02-15446ab07cb1" alt="Value Counts Output" width="600"/>
+
 
 ## 💸 Room type and price is given seperately
 ```python
@@ -92,7 +94,26 @@ plt.xlabel('Room Type')
 
 plt.show()
 ```
-![image](https://github.com/user-attachments/assets/df8392ae-632b-47be-bc3e-e0892145e484)
+<img src="https://github.com/user-attachments/assets/df8392ae-632b-47be-bc3e-e0892145e484" alt="Value Counts Output" width="600"/>
+
+# 📈 Top 10 neighborhoods with the most listings
+```python
+neighborhood_counts = listings['neighbourhood'].value_counts().head(10)
+print("Top 10 Neighborhoods by Listings:")
+print(neighborhood_counts)
+
+# Plot neighborhoods with most listings
+neighborhood_counts.plot(kind='bar', color='lightcoral')
+plt.title('Top 10 Neighborhoods by Listings')
+plt.ylabel('Number of Listings')
+plt.xlabel('Neighborhood')
+plt.xticks(rotation=90)
+plt.show()
+```
+<img src="https://github.com/user-attachments/assets/97a35547-08fb-4253-8a6e-36fd04094e01" alt="Value Counts Output" width="600"/>
+<img src="https://github.com/user-attachments/assets/f239e275-67f0-4dbe-bed1-0eaffc5107b0" alt="Value Counts Output" width="600"/>
+
+
 
 
 
